@@ -25,9 +25,9 @@ jobs:
           set "INCLUDE=%INCLUDE%;C:\vcpkg\installed\x64-windows-static\include"
           nmake -f Makefile.msvc
 
-      # 打包成品供你下载
+      # 【核心修正】：打包整个 bin 目录下的所有程序和组件
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: my-免杀-3proxy
-          path: src/*.exe
+          path: bin/
